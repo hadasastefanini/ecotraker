@@ -1,60 +1,28 @@
-/**
- * EcoTracker - Estilos principales
- * 
- * Arquitectura CSS organizada siguiendo metodología BEM modificada
- * y principios de diseño responsivo mobile-first
- */
-
-/* ================================
-   IMPORTACIÓN DE FUENTES PREMIUM
-   ================================ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Playfair+Display:wght@300;400;500;600&display=swap');
-
-/* ================================
-   VARIABLES CSS - DESIGN TOKENS
-   ================================ */
+/* Paleta inspirada en luxury yachting */
 :root {
-    /* Paleta de colores inspirada en luxury yachting */
     --deep-ocean: #0B1426;
     --ocean-blue: #1E3A5F;
     --sea-blue: #2E5984;
     --light-blue: #4A90B8;
     --ocean-foam: #E8F4F8;
     --pure-white: #FFFFFF;
-    
-    /* Colores de texto jerárquicos */
     --text-primary: #0B1426;
     --text-secondary: #64748B;
     --text-light: #94A3B8;
-    
-    /* Colores de acento y estados */
     --accent-gold: #D4AF37;
     --success-green: #10B981;
-    
-    /* Bordes y sombras elegantes */
     --border-elegant: rgba(148, 163, 184, 0.2);
     --shadow-elegant: 0 4px 25px rgba(11, 20, 38, 0.08);
     --shadow-deep: 0 8px 40px rgba(11, 20, 38, 0.12);
-    
-    /* Espaciado y dimensiones */
-    --container-max-width: 1400px;
-    --border-radius: 16px;
-    --border-radius-sm: 8px;
-    --border-radius-lg: 24px;
 }
 
-/* ================================
-   RESET Y CONFIGURACIÓN BASE
-   ================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Playfair+Display:wght@300;400;500;600&display=swap');
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -67,9 +35,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* ================================
-   TIPOGRAFÍA ELEGANTE Y JERARQUÍA
-   ================================ */
+/* Tipografía elegante y jerarquía refinada */
 h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
     font-weight: 300;
@@ -101,49 +67,19 @@ h4 {
     letter-spacing: -0.01em;
 }
 
-/* Texto body con espaciado óptimo */
 p, li, span {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     letter-spacing: 0.01em;
 }
 
-/* Elementos de ayuda y descripciones */
-small {
-    font-size: 0.875rem;
-    color: var(--text-light);
-    font-weight: 400;
-}
-
-/* Accesibilidad - screen readers only */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-/* ================================
-   LAYOUT PRINCIPAL Y CONTENEDORES
-   ================================ */
 .container {
-    max-width: var(--container-max-width);
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-.content-section {
-    padding: 5rem 0;
-}
-
-/* ================================
-   HERO SECTION - HEADER PRINCIPAL
-   ================================ */
+/* Header hero elegante */
 .hero-section {
     background: linear-gradient(135deg, var(--deep-ocean) 0%, var(--ocean-blue) 50%, var(--sea-blue) 100%);
     color: var(--pure-white);
@@ -155,7 +91,6 @@ small {
     align-items: center;
 }
 
-/* Efecto de profundidad con pseudo-elemento */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -190,9 +125,7 @@ small {
     line-height: 1.6;
 }
 
-/* ================================
-   NAVEGACIÓN PREMIUM STICKY
-   ================================ */
+/* Navegación premium */
 .navigation {
     background: var(--pure-white);
     backdrop-filter: blur(20px);
@@ -227,7 +160,6 @@ small {
     position: relative;
 }
 
-/* Efecto de underline animado */
 .nav-button::after {
     content: '';
     position: absolute;
@@ -257,9 +189,7 @@ small {
     width: 60%;
 }
 
-/* ================================
-   SISTEMA DE PESTAÑAS
-   ================================ */
+/* Contenido con espaciado elegante */
 .tab-content {
     display: none;
     min-height: 60vh;
@@ -269,9 +199,11 @@ small {
     display: block;
 }
 
-/* ================================
-   SECCIONES INFORMATIVAS
-   ================================ */
+.content-section {
+    padding: 5rem 0;
+}
+
+/* Sección educativa premium */
 .info-section {
     background: var(--pure-white);
     margin-bottom: 4rem;
@@ -296,7 +228,6 @@ small {
     font-weight: 300;
 }
 
-/* Grid de información adaptativo */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -304,12 +235,9 @@ small {
     margin: 4rem 0;
 }
 
-/* ================================
-   TARJETAS INFORMATIVAS PREMIUM
-   ================================ */
 .info-card {
     background: var(--pure-white);
-    border-radius: var(--border-radius);
+    border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--border-elegant);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -332,50 +260,7 @@ small {
     padding: 2.5rem;
 }
 
-/* Línea superior animada */
-.info-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--light-blue), var(--sea-blue));
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    z-index: 1;
-}
-
-.info-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-deep);
-}
-
-.info-card:hover .info-card-visual {
-    transform: scale(1.02);
-}
-
-.info-card:hover::before {
-    transform: scaleX(1);
-}
-
-.info-card h3 {
-    color: var(--deep-ocean);
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-
-.info-card p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-/* ================================
-   VISUALES CSS PARA CADA CONCEPTO
-   ================================ */
-
-/* Visual para gases de efecto invernadero */
+/* Visuales específicos para cada tarjeta */
 .visual-atmosphere {
     background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 40%, #93c5fd 100%);
     position: relative;
@@ -402,7 +287,6 @@ small {
     right: 30px;
 }
 
-/* Visual para fuentes de emisión */
 .visual-sources {
     background: linear-gradient(135deg, #dc2626 0%, #f97316 50%, #fbbf24 100%);
     position: relative;
@@ -426,7 +310,6 @@ small {
     opacity: 0.9;
 }
 
-/* Visual para contexto global */
 .visual-global {
     background: linear-gradient(135deg, #059669 0%, #10b981 50%, #6ee7b7 100%);
     position: relative;
@@ -455,7 +338,6 @@ small {
     opacity: 0.8;
 }
 
-/* Visual para acción personal */
 .visual-action {
     background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
     position: relative;
@@ -552,9 +434,7 @@ small {
     opacity: 0.8;
 }
 
-/* ================================
-   ANIMACIONES EDUCATIVAS
-   ================================ */
+/* Animaciones */
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
@@ -576,12 +456,48 @@ small {
     100% { width: 20px; opacity: 0.6; }
 }
 
-/* ================================
-   SECCIONES INTERACTIVAS
-   ================================ */
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--light-blue), var(--sea-blue));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-deep);
+}
+
+.info-card:hover .info-card-visual {
+    transform: scale(1.02);
+}
+
+.info-card:hover::before {
+    transform: scaleX(1);
+}
+
+.info-card h3 {
+    color: var(--deep-ocean);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.info-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Secciones interactivas premium */
 .interactive-section {
     background: var(--ocean-foam);
-    border-radius: var(--border-radius-lg);
+    border-radius: 24px;
     padding: 4rem;
     margin-bottom: 4rem;
     border: 1px solid var(--border-elegant);
@@ -606,9 +522,7 @@ small {
     margin-right: auto;
 }
 
-/* ================================
-   FORMULARIOS ELEGANTES
-   ================================ */
+/* Formulario elegante */
 .calculator-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -618,7 +532,7 @@ small {
 
 .form-section {
     background: var(--pure-white);
-    border-radius: var(--border-radius);
+    border-radius: 16px;
     padding: 2.5rem;
     border: 1px solid var(--border-elegant);
     box-shadow: var(--shadow-elegant);
@@ -664,9 +578,7 @@ small {
     transform: translateY(-1px);
 }
 
-/* ================================
-   BOTONES PRINCIPALES
-   ================================ */
+/* Botón principal elegante */
 .primary-button {
     background: linear-gradient(135deg, var(--deep-ocean), var(--ocean-blue));
     color: var(--pure-white);
@@ -684,7 +596,6 @@ small {
     overflow: hidden;
 }
 
-/* Efecto de shimmer en hover */
 .primary-button::before {
     content: '';
     position: absolute;
@@ -705,9 +616,7 @@ small {
     left: 100%;
 }
 
-/* ================================
-   TARJETAS DE RESULTADOS
-   ================================ */
+/* Resultado premium */
 .result-card {
     background: linear-gradient(135deg, var(--deep-ocean), var(--ocean-blue));
     color: var(--pure-white);
@@ -720,7 +629,6 @@ small {
     overflow: hidden;
 }
 
-/* Efecto de shimmer de fondo */
 .result-card::before {
     content: '';
     position: absolute;
@@ -755,7 +663,7 @@ small {
 
 .recommendations {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius);
+    border-radius: 16px;
     padding: 2rem;
     text-align: left;
     position: relative;
@@ -785,9 +693,7 @@ small {
     font-weight: bold;
 }
 
-/* ================================
-   SISTEMA DE HÁBITOS
-   ================================ */
+/* Tarjetas de hábitos premium */
 .habits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -798,7 +704,7 @@ small {
 .habit-card {
     background: var(--pure-white);
     border: 1px solid var(--border-elegant);
-    border-radius: var(--border-radius);
+    border-radius: 16px;
     padding: 2rem;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -865,12 +771,10 @@ small {
     opacity: 0.9;
 }
 
-/* ================================
-   BARRAS DE PROGRESO
-   ================================ */
+/* Progreso elegante */
 .progress-section {
     background: var(--pure-white);
-    border-radius: var(--border-radius);
+    border-radius: 16px;
     padding: 2.5rem;
     margin-top: 3rem;
     border: 1px solid var(--border-elegant);
@@ -926,9 +830,7 @@ small {
     font-weight: 500;
 }
 
-/* ================================
-   SISTEMA DE QUIZ
-   ================================ */
+/* Quiz premium */
 .quiz-question {
     margin-bottom: 3rem;
 }
@@ -992,9 +894,7 @@ small {
     line-height: 1.6;
 }
 
-/* ================================
-   ESTADÍSTICAS Y MÉTRICAS
-   ================================ */
+/* Estadísticas premium */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1005,7 +905,7 @@ small {
 .stat-card {
     background: var(--pure-white);
     border: 1px solid var(--border-elegant);
-    border-radius: var(--border-radius);
+    border-radius: 16px;
     padding: 2.5rem;
     text-align: center;
     transition: all 0.3s ease;
@@ -1043,9 +943,7 @@ small {
     letter-spacing: 0.5px;
 }
 
-/* ================================
-   SISTEMA DE LOGROS
-   ================================ */
+/* Logros premium */
 .achievements-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1055,7 +953,7 @@ small {
 .achievement-card {
     background: var(--pure-white);
     border: 1px solid var(--border-elegant);
-    border-radius: var(--border-radius);
+    border-radius: 16px;
     padding: 2.5rem;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1097,9 +995,7 @@ small {
     line-height: 1.5;
 }
 
-/* ================================
-   DISEÑO RESPONSIVO
-   ================================ */
+/* Responsividad mejorada */
 @media (max-width: 768px) {
     .container {
         padding: 0 1.5rem;
@@ -1134,57 +1030,5 @@ small {
     
     .section-title {
         font-size: 1.875rem;
-    }
-    
-    h1 {
-        font-size: 2.5rem;
-    }
-    
-    h2 {
-        font-size: 2rem;
-    }
-    
-    .content-section {
-        padding: 3rem 0;
-    }
-    
-    .hero-section {
-        min-height: 50vh;
-    }
-    
-    .hero-content {
-        padding: 3rem 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-container {
-        flex-direction: column;
-    }
-    
-    .nav-button {
-        width: 100%;
-        padding: 1rem;
-        border-bottom: 1px solid var(--border-elegant);
-    }
-    
-    .nav-button:last-child {
-        border-bottom: none;
-    }
-    
-    .interactive-section {
-        padding: 2rem 1rem;
-    }
-    
-    .form-section {
-        padding: 2rem 1.5rem;
-    }
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .section-title {
-        font-size: 1.5rem;
     }
 }
